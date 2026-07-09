@@ -18,6 +18,8 @@
         public decimal PLManzanillo { get; set; }
 
         // STOCKS
+        public decimal CedisGdlAdministrativo { get; set; }
+        public decimal CedisGdlOperativo { get; set; }
         public decimal Mandarina { get; set; }
         public decimal Mercado { get; set; }
         public decimal Granadilla { get; set; }

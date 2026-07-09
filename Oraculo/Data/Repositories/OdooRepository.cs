@@ -43,6 +43,8 @@ namespace Oraculo.Data.Repositories
                         MAX(CASE WHEN T1.""PriceList"" = 8 THEN T1.""Price"" END) AS ""PLManzanillo"",
 
                         -- STOCK POR SUCURSAL / ALMACÉN
+                        SUM(CASE WHEN T2.""WhsCode"" = '300' THEN T2.""OnHand"" ELSE 0 END) AS ""CedisGdlAdministrativo"",
+                        SUM(CASE WHEN T2.""WhsCode"" = '301' THEN T2.""OnHand"" ELSE 0 END) AS ""CedisGdlOperativo"",
                         SUM(CASE WHEN T2.""WhsCode"" = '309' THEN T2.""OnHand"" ELSE 0 END) AS ""Mandarina"",
                         SUM(CASE WHEN T2.""WhsCode"" = '311' THEN T2.""OnHand"" ELSE 0 END) AS ""Mercado"",
                         SUM(CASE WHEN T2.""WhsCode"" = '313' THEN T2.""OnHand"" ELSE 0 END) AS ""Granadilla"",
@@ -107,6 +109,8 @@ namespace Oraculo.Data.Repositories
                                 PLManzanillo = reader["PLManzanillo"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PLManzanillo"]),
 
                                 // STOCKS
+                                CedisGdlAdministrativo = reader["CedisGdlAdministrativo"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["CedisGdlAdministrativo"]),
+                                CedisGdlOperativo = reader["CedisGdlOperativo"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["CedisGdlOperativo"]),
                                 Mandarina = reader["Mandarina"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Mandarina"]),
                                 Mercado = reader["Mercado"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Mercado"]),
                                 Granadilla = reader["Granadilla"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Granadilla"]),

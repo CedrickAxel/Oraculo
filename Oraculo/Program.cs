@@ -40,6 +40,7 @@ builder.Services.AddScoped<IBackupRepository, BackupRepository>();
 builder.Services.AddScoped<IBranchManagersRepository, BranchManagersRepository>();
 builder.Services.AddScoped<IITRepository, ITRepository>();
 builder.Services.AddScoped<IKioskRepository, KioskRepository>();
+builder.Services.AddScoped<IOdooRepository, OdooRepository>();
 builder.Services.AddScoped<IR2QInvoicesRepository, R2QInvoicesRepository>();
 builder.Services.AddScoped<IRRHHRepository, RRHHRepository>();
 builder.Services.AddScoped<IWoocommerceRepository, WoocommerceRepository>();
